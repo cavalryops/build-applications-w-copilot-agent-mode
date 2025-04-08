@@ -78,12 +78,17 @@ WSGI_APPLICATION = "octofit_tracker.wsgi.application"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'octofit_db',
-        'CLIENT': {
-            'host': 'localhost',
-            'port': 27017
+    "default": {
+        "ENGINE": "djongo",
+        "NAME": "octofit_db",
+        "ENFORCE_SCHEMA": False,
+        "CLIENT": {
+            "host": "localhost",
+            "port": 27017,
+            "username": "",
+            "password": "",
+            "authSource": "admin",
+            "authMechanism": "SCRAM-SHA-256",
         }
     }
 }
